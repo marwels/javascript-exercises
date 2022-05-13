@@ -1,10 +1,14 @@
 const sumAll = function (startNum, finishNum) {
-    let sum = startNum;
 
-    for (i = 0; i <= finishNum; i++) {
-        sum = + i;
+    //Gauss: (n / 2) (first number + last number) = sum
+    //n= last-first+1
+
+    if (startNum < finishNum) {
+        return ((finishNum - startNum + 1) / 2) * (startNum + finishNum);
+    } else {
+        return ((startNum - finishNum + 1) / 2) * (finishNum + startNum);
+
     }
-
 
 };
 
