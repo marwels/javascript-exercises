@@ -1,22 +1,27 @@
 const ftoc = function (fahrenheit) {
   //[°C] = ([°F] − 32) × 5⁄9
-  let celsius = (fahrenheit - 32) * (5 / 9);
-  //number.toFixed([digits])
+  let celsius = Number((fahrenheit - 32) * (5 / 9));
+
   if (fahrenheit === 32) {
     return 0;
   } else {
-    return celsius.toFixed(1);
+    return Number(celsius.toFixed(1));
+    //number.toFixed([digits]) returns string!
+
+
+
+
   }
 
 };
 
 const ctof = function (celsius) {
   //[°F] = [°C] × 9⁄5 + 32
-  let fahrenheit = celsius * (9 / 5) + 32;
+  let fahrenheit = Number((celsius * (9 / 5) + 32));
   if (celsius === 0) {
     return 32;
   } else {
-    return fahrenheit.toFixed(1);
+    return Number(fahrenheit.toFixed(1));
   }
 };
 
