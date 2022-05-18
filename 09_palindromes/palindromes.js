@@ -6,13 +6,14 @@ const palindromes = function (palin) {
 
     console.log(filteredArrayPalin);
 
-    for (i = 0; i < filteredArrayPalin.length; i++) {
-        if (filteredArrayPalin[i] !== filteredArrayPalin[filteredArrayPalin.length - i]) {
+    for (i = 0; i < filteredArrayPalin.length / 2; i++) {
+        if (filteredArrayPalin[i] !== filteredArrayPalin[filteredArrayPalin - i]) {
             return false;
         } else { return true; }
 
     }
-};
+}
+
 
 // Do not edit below this line
 module.exports = palindromes;
