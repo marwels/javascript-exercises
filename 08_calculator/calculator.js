@@ -5,12 +5,17 @@ const add = function (...toAdd) {
   return sum;
 };
 
-const subtract = function () {
-
+const subtract = function (...toSubstract) {
+  let total = toSubstract.reduce((a, b) => a - b, 0); // with initial value to avoid when the array is empty
+  return total;
 };
 
-const sum = function () {
-
+const sum = function (...toSum) {
+  if (toSum.length === 1 && Array.isArray(toSum[0])) {
+    toSum = toSum[0];
+  }
+  let total = toSum.reduce((a, b) => a + b, 0); // with initial value to avoid when the array is empty
+  return total;
 };
 
 const multiply = function () {
