@@ -4,6 +4,15 @@ const palindromes = function (palin) {
     //Falsy values include null, undefined, 0, empty string, NaN and false.
     //So they’ll return false if we pass them into the Boolean function.
 
+    for (var i = 0; i < filteredArrayPalin.length; i++) {
+
+        if (filteredArrayPalin[i] === "," || filteredArrayPalin === "!") {
+            filteredArrayPalin.splice(i, 1);
+            i--;
+        }
+    }
+
+
     console.log(filteredArrayPalin);
 
     for (i = 0; i < filteredArrayPalin.length / 2; i++) {
