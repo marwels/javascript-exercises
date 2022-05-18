@@ -1,7 +1,8 @@
 const add = function (...toAdd) {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
-  var sum = toAdd.reduce((a, b) => a + b, 0); // with initial value to avoid when the array is empty
+  let sum = toAdd.reduce((a, b) => a + b, 0); // with initial value to avoid when the array is empty
+  return sum;
 };
 
 const subtract = function () {
