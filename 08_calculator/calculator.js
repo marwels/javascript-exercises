@@ -7,11 +7,8 @@ const add = function (...toAdd) {
   return sum;
 };
 
-const subtract = function (...toSubstract) {
-  if (toSubstract.length === 1 && Array.isArray(toSubstract[0])) {
-    toSubstract = toSubstract[0];
-  }
-  let total = toSubstract.reduce((a, b) => a - b, 0); // with initial value to avoid when the array is empty
+const subtract = function (a, b) {
+  let total = a - b;
   return total;
 };
 
