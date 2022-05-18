@@ -27,12 +27,12 @@ const multiply = function (...toMultiply) {
   if (toMultiply.length === 1 && Array.isArray(toMultiply[0])) {
     toMultiply = toMultiply[0];
   }
-  let total = toMultiply.reduce((a, b) => a * b, toMultiply[0]); // with initial value to avoid when the array is empty
+  let total = toMultiply.reduce((a, b) => a * b, 1); // with initial value to avoid when the array is empty
   return total;
 };
 
-const power = function () {
-
+const power = function (m, n) {
+  return Math.pow(m, n);
 };
 
 const factorial = function () {
