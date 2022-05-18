@@ -7,11 +7,12 @@ const palindromes = function (palin) {
     console.log(filteredArrayPalin);
 
     for (i = 0; i < filteredArrayPalin.length / 2; i++) {
-        if (filteredArrayPalin[i] !== filteredArrayPalin[filteredArrayPalin - i]) {
+        if (filteredArrayPalin[i] !== filteredArrayPalin[filteredArrayPalin.length - 1 - i]) {
             return false;
-        } else { return true; }
-
+        }
     }
+
+    return true;
 }
 
 
