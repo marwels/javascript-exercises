@@ -7,9 +7,9 @@ const palindromes = function (palin) {
     console.log(filteredArrayPalin);
 
     for (i = 0; i < filteredArrayPalin.length; i++) {
-        if (filteredArrayPalin[i] === filteredArrayPalin[filteredArrayPalin.length - i]) {
-            continue;
-        } else { return false; }
+        if (filteredArrayPalin[i] !== filteredArrayPalin[filteredArrayPalin.length - i]) {
+            return false;
+        } else { return true; }
 
     }
 };
