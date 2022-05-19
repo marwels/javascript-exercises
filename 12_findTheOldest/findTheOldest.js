@@ -4,22 +4,18 @@ const findTheOldest = function (arrayOfObjects) {
     let arrAge = [];
 
     for (i = 0; i < arrayOfObjects.length; i++) {
-        arrAge.push(arrDeath[i] - arrBirth[i]);
-    }
-    console.log(arrAge);
-
-    for (i = 0; i < arrAge.length; i++) {
-        if (arrAge[i] === NaN) {
+        let age = arrDeath[i] - arrBirth[i];
+        if (age === NaN) {
             let today = new Date();
             let yr = today.getFullYear();
             console.log(yr);
-            arrAge[i] = yr - arrBirth[i];
+            arrAge.push(yr - arrBirth[i]);
         }
+        arrAge.push(age);
     }
-
     console.log(arrAge);
 
-    let largest = Math.max.apply(Math, arrAge); //?? skłasnia apply
+    let largest = Math.max.apply(null, arrAge); //?? skłasnia apply
     console.log(largest);
     //2. version of finding the largest:
     //let temp = 0;
@@ -30,6 +26,7 @@ const findTheOldest = function (arrayOfObjects) {
     //});
 
     let searchedIndex = arrAge.indexOf(largest);
+    console.log(searchedIndex);
     return arrayOfObjects[searchedIndex];
 
 };
