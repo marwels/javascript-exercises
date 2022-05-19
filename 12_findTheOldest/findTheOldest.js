@@ -1,6 +1,6 @@
 const findTheOldest = function (arrayOfObjects) {
     let arrBirth = arrayOfObjects.map((object) => object.yearOfBirth);
-    let arrDeath = arrayOfObjects.map((object) => object.yearOfBirth);
+    let arrDeath = arrayOfObjects.map((object) => object.yearOfDeath);
     let arrAge = [];
 
     for (i = 0; i < arrayOfObjects.length; i++) {
