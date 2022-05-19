@@ -3,20 +3,23 @@ const palindromes = function (palin) {
     const filteredArrayPalin = arrayPalin.filter(Boolean);
     //Falsy values include null, undefined, 0, empty string, NaN and false.
     //So they’ll return false if we pass them into the Boolean function.
+    console.log(filteredArrayPalin);
 
     for (var i = 0; i < filteredArrayPalin.length; i++) {
 
-        if (filteredArrayPalin[i] === "," || filteredArrayPalin === "!") {
+        if (filteredArrayPalin[i] === "," || filteredArrayPalin[i] === "!" ||
+            filteredArrayPalin[i] === " " || filteredArrayPalin[i] === ".") {
             filteredArrayPalin.splice(i, 1);
             i--;
         }
+        console.log(filteredArrayPalin);
     }
 
 
-    console.log(filteredArrayPalin);
+
 
     for (i = 0; i < filteredArrayPalin.length / 2; i++) {
-        if (filteredArrayPalin[i] !== filteredArrayPalin[filteredArrayPalin.length - 1 - i]) {
+        if (filteredArrayPalin[i].toLowerCase() !== filteredArrayPalin[filteredArrayPalin.length - 1 - i].toLowerCase()) {
             return false;
         }
     }
