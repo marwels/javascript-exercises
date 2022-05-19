@@ -7,7 +7,7 @@ const findTheOldest = function (arrayOfObjects) {
         arrAge.push(arrDeath[i] - arrBirth[i]);
     }
     console.log(arrAge);
-    let largest = Math.max.apply(arrAge);
+    let largest = Math.max.apply(Math, arrAge);
     console.log(largest);
     //2. version of finding the largest:
     //let temp = 0;
