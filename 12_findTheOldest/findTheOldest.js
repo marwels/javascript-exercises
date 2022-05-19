@@ -7,7 +7,19 @@ const findTheOldest = function (arrayOfObjects) {
         arrAge.push(arrDeath[i] - arrBirth[i]);
     }
     console.log(arrAge);
-    let largest = Math.max.apply(Math, arrAge);
+
+    for (i = 0; i < arrAge.length; i++) {
+        if (arrAge[i] === NaN) {
+            let today = new Date();
+            let yr = today.getFullYear();
+            console.log(yr);
+            arrAge[i] = yr - arrBirth[i];
+        }
+    }
+
+    console.log(arrAge);
+
+    let largest = Math.max.apply(Math, arrAge); //?? skłasnia apply
     console.log(largest);
     //2. version of finding the largest:
     //let temp = 0;
