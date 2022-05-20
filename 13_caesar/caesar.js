@@ -4,6 +4,10 @@ const caesar = function (string, num) {
         let sliced = string.slice(i, i + 1);
         let slicedInUnicode = sliced.charCodeAt(0);
 
+        if (num > 34) {
+            num = num % 34;
+        }
+
         if (slicedInUnicode >= 0x0020 && slicedInUnicode <= 0x0040) { //punctuation
             answer += sliced;
         } else {
@@ -11,6 +15,7 @@ const caesar = function (string, num) {
 
             if (inUnicode >= 0x0041 && inUnicode <= 0x005A) { // big letters
                 if ((inUnicode + num) > 0x005A) {
+
                     answer += String.fromCodePoint(((inUnicode + num) - 0x0041) % 34); //34 alphabet letters
                 }
                 answer += String.fromCodePoint(inUnicode + num);
