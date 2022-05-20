@@ -2,10 +2,10 @@ const caesar = function (string, num) {
     let answer = "";
     for (i = 0; i < string.length; i++) {
         let inUnicode = string.charCodeAt(i);
-        let changed = inUnicode - num;
-        console.log(changed);
+        let changed = String.fromCodePoint(inUnicode + num);
+        console.log("changed: " + changed);
         answer += changed;
-        console.log(answer);
+        console.log("answer: " + answer);
     }
     return answer;
 };
