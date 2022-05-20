@@ -4,13 +4,15 @@ const caesar = function (string, num) {
         let sliced = string.slice(i, i + 1);
         let slicedInUnicode = sliced.charCodeAt(0);
 
-        if (slicedInUnicode >= 0x0020 && slicedInUnicode <= 0x0040) {
+        if (slicedInUnicode >= 0x0020 && slicedInUnicode <= 0x0040) { //punctuation
             answer += slicedInUnicode;
         } else {
             let inUnicode = string.charCodeAt(i);
 
-            if (inUnicode + num > 0x005A) {
+            if (inUnicode >= 0x0041 && inUnicode <= 0x005A) { // big letters
                 answer += String.fromCodePoint(((inUnicode + num) - 0x005A) % 34); //34 alphabet letters
+            } else if (inUnicode >= 0x0061 && inUnicode <= 0x007A) {// small letters
+                answer += String.fromCodePoint(((inUnicode + num) - 0x007A) % 34); //34 alphabet letters
             } else {
                 let changed = String.fromCodePoint(inUnicode + num);
                 console.log("changed: " + changed);
