@@ -9,10 +9,17 @@ const caesar = function (string, num) {
         } else {
             let inUnicode = string.charCodeAt(i);
 
-            if ((inUnicode >= 0x0041 && inUnicode <= 0x005A) && (inUnicode + num) > 0x005A) { // big letters
-                answer += String.fromCodePoint(((inUnicode + num) - 0x005A) % 34); //34 alphabet letters
-            } else if ((inUnicode >= 0x0061 && inUnicode <= 0x007A) && ((inUnicode + num) > 0x007A)) {// small letters
-                answer += String.fromCodePoint(((inUnicode + num) - 0x007A) % 34); //34 alphabet letters
+            if (inUnicode >= 0x0041 && inUnicode <= 0x005A) { // big letters
+                if ((inUnicode + num) > 0x005A) {
+                    answer += String.fromCodePoint(((inUnicode + num) - 0x0041) % 34); //34 alphabet letters
+                }
+                answer += String.fromCodePoint(inUnicode + num);
+
+            } else if (inUnicode >= 0x0061 && inUnicode <= 0x007A) {// small letters
+                if ((inUnicode + num) > 0x007A) {
+                    answer += String.fromCodePoint(((inUnicode + num) - 0x007A) % 34); //34 alphabet letters
+                }
+                answer += String.fromCodePoint(inUnicode + num);
             } else {
                 let changed = String.fromCodePoint(inUnicode + num);
                 console.log("changed: " + changed);
