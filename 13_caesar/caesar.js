@@ -1,7 +1,10 @@
-const caesar = function (string) {
+const caesar = function (string, num) {
     let answer = "";
     for (i = 0; i < string.length; i++) {
-        answer += string.charCodeAt(i);
+        let inUnicode = string.charCodeAt(i);
+        let changed = inUnicode - num;
+        console.log(changed);
+        answer += changed;
         console.log(answer);
     }
     return answer;
