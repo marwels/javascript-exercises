@@ -5,7 +5,7 @@ const caesar = function (string, num) {
         let slicedInUnicode = sliced.charCodeAt(0);
 
         if (slicedInUnicode >= 0x0020 && slicedInUnicode <= 0x0040) { //punctuation
-            answer += slicedInUnicode;
+            answer += sliced;
         } else {
             let inUnicode = string.charCodeAt(i);
 
