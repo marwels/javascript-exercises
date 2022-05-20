@@ -5,14 +5,16 @@ const findTheOldest = function (arrayOfObjects) {
 
     for (i = 0; i < arrayOfObjects.length; i++) {
         let age = arrDeath[i] - arrBirth[i];
-        if (age === NaN) {
+        if (isNaN(age)) {
             let today = new Date();
             let yr = today.getFullYear();
-            console.log(yr);
+            console.log("year" + yr);
             arrAge.push(yr - arrBirth[i]);
+        } else {
+            arrAge.push(age);
         }
-        arrAge.push(age);
     }
+    console.log("final Arr age");
     console.log(arrAge);
 
     let largest = Math.max.apply(null, arrAge); //?? skłasnia apply
