@@ -16,7 +16,9 @@ const caesar = function (string, num) {
             if (inUnicode >= 0x0041 && inUnicode <= 0x005A) { // big letters
                 if ((inUnicode + num) > 0x005A) {
 
-                    answer += String.fromCodePoint((inUnicode + num - 26)); // this does not work!!
+                    answer += String.fromCodePoint((inUnicode + num - 26));
+                } else if (inUnicode + num < 0x0041) {
+                    answer += String.fromCodePoint((inUnicode + num + 26));
                 } else {
                     answer += String.fromCodePoint(inUnicode + num);
                 }
@@ -24,6 +26,8 @@ const caesar = function (string, num) {
             } else if (inUnicode >= 0x0061 && inUnicode <= 0x007A) {// small letters
                 if ((inUnicode + num) > 0x007A) {
                     answer += String.fromCodePoint(((inUnicode + num) - 26));
+                } else if (inUnicode + num < 0x0061) {
+                    answer += String.fromCodePoint(((inUnicode + num) + 26));
                 } else {
                     answer += String.fromCodePoint(inUnicode + num);
                 }
